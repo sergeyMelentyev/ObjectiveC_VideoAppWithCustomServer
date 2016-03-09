@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^onComplete)(NSDictionary * __nullable dataDict, NSString * __nullable errMessage);
 
 @interface HTTPService : NSObject
 
 // CREATE A STATIC FUNC DEFINITION. CAN BE CALLED GLOBALY ON A CLASS
 +(id) instance;
 
--(void) getTitorials;
+-(void) getTutorials:(nullable onComplete)completionHandler;
 
 @end

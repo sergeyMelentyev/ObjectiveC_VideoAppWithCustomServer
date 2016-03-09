@@ -17,12 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [HTTPService instance];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+    [[HTTPService instance] getTutorials:^(NSDictionary * _Nullable dataDict, NSString * _Nullable errMessage) {
+        if (dataDict) {
+             
+        } else if (errMessage) {
+            // Alert user with error
+        }
+    }];
 }
 
 @end
