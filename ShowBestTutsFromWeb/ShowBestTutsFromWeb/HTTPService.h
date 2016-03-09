@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface HTTPService : NSObject
 
 // CREATE A STATIC FUNC DEFINITION. CAN BE CALLED GLOBALY ON A CLASS
 +(id) instance;
+
+-(void) getTitorials;
 
 @end

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [HTTPService instance];
 }
 
 - (void)didReceiveMemoryWarning {
