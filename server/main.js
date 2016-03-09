@@ -20,3 +20,27 @@ app.all("/*", function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+// SERVER IMPLEMENTATION
+var tutorials = [
+	{
+		id: 1,
+		title: "Any name here",
+		description: "Any description here",
+		iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe>',
+		thumbnail: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
+	},
+	{
+		id: 2,
+		title: "Any new name here",
+		description: "Any new description here",
+		iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5B7mJtiwbMg" frameborder="0" allowfullscreen></iframe>',
+		thumbnail: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
+	}
+];
+
+app.get("/tutorials", function(req, res) {
+	console.log("GET from server");
+	res.send(tutorials);
+});
+
+app.listen(6060);
