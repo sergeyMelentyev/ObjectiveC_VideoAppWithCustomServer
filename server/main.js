@@ -24,17 +24,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 var tutorials = [
 	{
 		id: 1,
-		title: "Any name here",
-		description: "Any description here",
-		iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe>',
-		thumbnail: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
+		videoTitle: "Any name here",
+		videoDescription: "Any description here",
+		videoIframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe>',
+		thumbnailUrl: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
 	},
 	{
 		id: 2,
-		title: "Any new name here",
-		description: "Any new description here",
-		iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5B7mJtiwbMg" frameborder="0" allowfullscreen></iframe>',
-		thumbnail: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
+		videoTitle: "Any new name here",
+		videoDescription: "Any new description here",
+		videoIframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5B7mJtiwbMg" frameborder="0" allowfullscreen></iframe>',
+		thumbnailUrl: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
 	}
 ];
 
