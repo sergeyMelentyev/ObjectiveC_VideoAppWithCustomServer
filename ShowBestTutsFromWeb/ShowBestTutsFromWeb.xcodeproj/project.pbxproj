@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801177481C916A6500BF13A9 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 801177471C916A6500BF13A9 /* VideoCell.m */; };
 		80BB243A1C90671300AFFCB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB24391C90671300AFFCB2 /* main.m */; };
 		80BB243D1C90671300AFFCB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB243C1C90671300AFFCB2 /* AppDelegate.m */; };
 		80BB24401C90671300AFFCB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB243F1C90671300AFFCB2 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		801177461C916A6500BF13A9 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		801177471C916A6500BF13A9 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 		80BB24351C90671300AFFCB2 /* ShowBestTutsFromWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowBestTutsFromWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BB24391C90671300AFFCB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80BB243B1C90671300AFFCB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		801177451C916A2600BF13A9 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				801177461C916A6500BF13A9 /* VideoCell.h */,
+				801177471C916A6500BF13A9 /* VideoCell.m */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
 		80BB242C1C90671300AFFCB2 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 		80BB24371C90671300AFFCB2 /* ShowBestTutsFromWeb */ = {
 			isa = PBXGroup;
 			children = (
+				801177451C916A2600BF13A9 /* CustomCell */,
 				80BB244F1C9067D600AFFCB2 /* Services */,
 				80BB243B1C90671300AFFCB2 /* AppDelegate.h */,
 				80BB243C1C90671300AFFCB2 /* AppDelegate.m */,
@@ -164,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80BB24401C90671300AFFCB2 /* ViewController.m in Sources */,
+				801177481C916A6500BF13A9 /* VideoCell.m in Sources */,
 				80BB24521C9067F700AFFCB2 /* HTTPService.m in Sources */,
 				80BB243D1C90671300AFFCB2 /* AppDelegate.m in Sources */,
 				80BB243A1C90671300AFFCB2 /* main.m in Sources */,
@@ -315,6 +329,7 @@
 				80BB244E1C90671300AFFCB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
