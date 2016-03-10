@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HTTPService.h"
 #import "Video.h"
+#import "VideoCell.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,6 +24,7 @@
     self.tableView.delegate = self;
     self.videoList = [[NSArray alloc] init];
     
+    // FROM NOW WORKING ON A BACKGROUND THREAD
     [[HTTPService instance] getTutorials:^(NSArray * _Nullable dataArray, NSString * _Nullable errMessage) {
         if (dataArray) {
             NSMutableArray *arrOfVideosForTableView = [[NSMutableArray alloc] init];
@@ -35,6 +37,7 @@
                 [arrOfVideosForTableView addObject:vid];
             }
             self.videoList = arrOfVideosForTableView;
+            [self updateTableData];
         } else if (errMessage) {
             // Alert user with error
         }
@@ -42,23 +45,31 @@
 }
 // CUSTOM FUNCTION FOR PUTTING TABLEVIEW BACK TO THE MAIN THREAD AND UPGRADE IT
 -(void) updateTableData {
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    VideoCell *cell = (VideoCell*)[tableView dequeueReusableCellWithIdentifier:@"main"];
+    if (!cell) {
+        cell = [[VideoCell alloc] init];
+    }
+    return cell;
 }
 -(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    Video *video = [self.videoList objectAtIndex:indexPath.row];
+    VideoCell *vidCell = (VideoCell*)cell;
+    [vidCell updateUI:video];
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.videoList.count;
 }
 @end
 
