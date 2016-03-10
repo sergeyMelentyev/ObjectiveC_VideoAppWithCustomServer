@@ -26,14 +26,14 @@ var tutorials = [
 		id: 1,
 		videoTitle: "Any name here",
 		videoDescription: "Any description here",
-		videoIframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe>',
+		videoIframe: '<div class="container"> <iframe class="video" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe></div>',
 		thumbnailUrl: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
 	},
 	{
 		id: 2,
 		videoTitle: "Any new name here",
 		videoDescription: "Any new description here",
-		videoIframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/5B7mJtiwbMg" frameborder="0" allowfullscreen></iframe>',
+		videoIframe: '<div class="container"> <iframe class="video" src="https://www.youtube.com/embed/5esQqZIJ83g" frameborder="0" allowfullscreen></iframe></div>',
 		thumbnailUrl: "https://i.ytimg.com/vi/4Zs0gUJ7eAM/maxresdefault.jpg"
 	}
 ];
