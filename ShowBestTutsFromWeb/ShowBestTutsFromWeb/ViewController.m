@@ -19,7 +19,7 @@
 
 @implementation ViewController
 
--(void) viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -45,35 +45,35 @@
     }];
 }
 // CUSTOM FUNCTION FOR PUTTING TABLEVIEW BACK TO THE MAIN THREAD AND UPGRADE IT
--(void) updateTableData {
+- (void) updateTableData {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
 }
 
--(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VideoCell *cell = (VideoCell*)[tableView dequeueReusableCellWithIdentifier:@"main"];
     if (!cell) {
         cell = [[VideoCell alloc] init];
     }
     return cell;
 }
--(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     Video *video = [self.videoList objectAtIndex:indexPath.row];
     VideoCell *vidCell = (VideoCell*)cell;
     [vidCell updateUI:video];
 }
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Video *video = [self.videoList objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"videoViewController" sender:video];
 }
--(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.videoList.count;
 }
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     VideoViewController *vc = (VideoViewController*)segue.destinationViewController;
     Video *video = (Video*)sender;
     vc.video = video;
